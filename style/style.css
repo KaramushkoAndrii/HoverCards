@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.main__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+.main__item h2 {
+    position: relative;
+
+    padding-top: 13rem;
+    padding-inline: 0.5rem;
+
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+
+    color: white;
+}
+
+.main__item p {
+    max-width:  75%;
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: azure;
+}
+
+.main__item button {
+    max-width: 45%;
+    padding: 0.25rem;
+
+    background-color: black;
+    border: 1px solid gray;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.main__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center; 
+    width: clamp(7rem, 17%, 12rem);
+    height: 16rem;
+
+    background-size: cover;
+    border-radius: 1rem;
+
+    overflow: hidden;
+}
+
+.main__item::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 0;
+
+    background-color: black;
+    opacity: 0.4;
+    
+    transition: height 0.7s ease;
+}
+
+.main__item:hover {
+    transform: scale(1.05); /* Увеличение размера при наведении*/ 
+    transition: transform 0.3s ease; /* Плавное изменение размера */
+}
+
+.main__item:hover::before {
+    height: 100%;
+    opacity: 0.6;  /*Изменение прозрачности фона при наведении */
+    transition: opacity 0.3s ease;  /*Плавное изменение прозрачности */
+}
+
+.main__item:hover h2,
+.main__item:hover p,
+.main__item:hover button {
+    transform: translateY(-10rem); /* Поднимаем элементы на 10rem вверх */
+    transition: transform 1s ease; /* Плавное изменение положения */
+}

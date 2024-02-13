@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const mainList = document.querySelector('.main__list');
     
-    function createImageList(imageArr) {
+    /*function createImageList(imageArr) {
         imageArr.forEach(obj => {
             const listItem = document.createElement('li');
             
@@ -61,5 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    createImageList(cards);
+    createImageList(cards);*/
+
+    function createImageList(imgArr) {
+        imgArr.forEach(card => {
+            const createdCard = `<li class = "main__item" style = "background-image: url(${card.url})">
+                                    <h2>${card.title}</h2>
+                                    <p>${card.description}</p>
+                                    <button>Click me!</button>
+                                </li>`
+            
+            mainList.insertAdjacentHTML("beforeend", createdCard)
+        });
+    }
+
+    createImageList(cards)
 })

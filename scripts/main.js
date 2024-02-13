@@ -60,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mainList.appendChild(listItem)
         });
     }*/
-    
-    createImageList(cards);
 
     function createImageList(imgArr) {
         imgArr.forEach(card => {

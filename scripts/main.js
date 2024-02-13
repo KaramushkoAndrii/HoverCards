@@ -63,4 +63,3 @@ document.addEventListener('DOMContentLoaded', () => {
     
     createImageList(cards);
 })
-
